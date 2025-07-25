@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CableCrew - About</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header, footer {
+      background-color: #fff;
+      padding: 20px;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #007bff;
+    }
+    main {
+      padding: 40px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    article {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    h1, h2 {
+      color: #222;
+    }
+    p {
+      color: #333;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form input {
+      padding: 8px;
+      margin-top: 10px;
+      border: 1px solid #ccc; 
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <strong style="color:#007bff;">CableCrew</strong>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button>Request a Quote</button>
+</header>
+
+<main>
+  <section>
+    <h1>About</h1>
+    <p>Delivering structured cabling, fiber, and smart connectivity solutions across Canada.</p>
+  </section>
+
+  <section>
+    <h2>What We Stand For</h2>
+    <article><h3>Technical Precision</h3><p>We focus on quality workmanship and reliable solutions.</p></article>
+    <article><h3>Future-Ready Design</h3><p>Every system we build is designed for tomorrow.</p></article>
+    <article><h3>Clean-First Delivery</h3><p>We prioritize neat and clean installation every time.</p></article>
+    <article><h3>Bold Innovations</h3><p>Innovation drives everything we do.</p></article>
+  </section>
+
+  <section>
+    <h2>Testimonials</h2>
+    <article><p>“Amazing work from CableCrew, very professional.” – <strong>Michael A.</strong></p></article>
+    <article><p>“Timely and efficient. Highly recommended.” – <strong>Derek K.</strong></p></article>
+    <article><p>“Installed everything perfectly.” – <strong>Janice O.</strong></p></article>
+  </section>
+</main>
+
+<footer>
+  <span style="color:#007bff;"><strong>CableCrew</strong></span>
+  <nav>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact Us</a>
+  </nav>
+  <form>
+    <input type="email" placeholder="Your email">
+  </form>
+</footer>
+
+</body>
+</html>
