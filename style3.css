@@ -227,12 +227,10 @@
 }
 .hero-container-wrapper {
             background-color: #ffffff;
-            padding: 20px;
             margin: 50px auto;
             max-width: 1400px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
         }
 
         .hero-section {
