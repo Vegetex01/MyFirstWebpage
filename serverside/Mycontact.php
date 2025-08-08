@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if (isset($_POST['btnRegistration'])) {
 
@@ -13,34 +14,40 @@ if (isset($_POST['btnRegistration'])) {
     $stateofresidence = $_POST['stateofresidence'];
     $country = $_POST['country'];
 
-//check if the student email already exist
+    //check if the student email already exist
     $checkTeacherEmail = $database->checkTeacherEmail($email);
 
     if ($checkTeacherEmail) {
         echo "The Email already exist";
     } else {
 
-//check if the teacher phone number already exist
-        $checkTeacherPhoneNumber= $database->checkTeacherPhoneNumber($phoneNumber);
+        //check if the teacher phone number already exist
+        $checkTeacherPhoneNumber = $database->checkTeacherPhoneNumber($phoneNumber);
 
-    if ($checkTeacherPhoneNumber) {
-        echo "The Number is already taken";
-    } else {
-
-        //call the registration method
-        $TeacherRegistation = $database->registerTeacher($firstName, $lastName, $email, $phoneNumber, $age, $homeaddresss, $stateofresidence, $country);
-
-
-        //check if the registration was successful
-        if ($TeacherRegistation) {
-
-            echo "Teacher registration successful";
-
+        if ($checkTeacherPhoneNumber) {
+            echo "The Number is already taken";
         } else {
 
-            echo "Teacher registration failed";
+            //call the registration method
+            $TeacherRegistation = $database->registerTeacher($firstName, $lastName, $email, $phoneNumber, $age, $homeaddresss, $stateofresidence, $country);
+
+
+            //check if the registration was successful
+            if ($TeacherRegistation) {
+
+                $_SESSION['firstName'] = $firstName;
+                $_SESSION['lastName'] = $lastName;
+                $_SESSION['email'] = $email;
+
+                echo "Teacher registration successful";
+                header("Location: welcome.php");
+                exit();
+
+            } else {
+
+                echo "Teacher registration failed";
+            }
         }
-    }
     }
 }
 ?>
@@ -192,8 +199,8 @@ if (isset($_POST['btnRegistration'])) {
                     <input type="number" id="age" name="age" placeholder="Your Age..">
                 </div>
             </div>
-            
-            
+
+
             <div class="row">
                 <div class="col-25">
                     <label for="HomeAddress">HomeAddress</label>
@@ -208,7 +215,8 @@ if (isset($_POST['btnRegistration'])) {
                     <label for="StateOfResidence">StateOfResidence</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="StateOfResidence" name="stateofresidence" placeholder="Your State Of Residence..">
+                    <input type="text" id="StateOfResidence" name="stateofresidence"
+                        placeholder="Your State Of Residence..">
                 </div>
             </div>
 

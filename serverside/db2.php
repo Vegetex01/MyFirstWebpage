@@ -36,12 +36,23 @@ class Database
         //check if the execution was successful
         if ($execution) {
 
-            header("Location: welcome.php");
-            exit();
+            return true;
+
         } else {
 
             return false;
         }
+    }
+
+
+    public function getTeachersByEmail($email)
+    {
+        $sql_query = "SELECT * from `Teachers` where Email = '$email'";
+
+        $execution = mysqli_query($this->connection, $sql_query);
+        $execution_check = mysqli_fetch_assoc($execution);
+
+        return $execution_check;
     }
 
 
